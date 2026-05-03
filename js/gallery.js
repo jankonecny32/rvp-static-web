@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", function () {
         filtersContainer.appendChild(btn);
     });
 
-    // Hide container until images are loaded to prevent overlap
+    // Hide container briefly to prevent initial overlap, show after first layout
     container.style.opacity = "0";
     container.style.transition = "opacity 0.3s ease";
 
@@ -63,27 +63,23 @@ document.addEventListener("DOMContentLoaded", function () {
         layoutMode: "fitRows"
     });
 
-    // Re-layout once all images are loaded
-    var images = container.querySelectorAll("img");
-    var loadedCount = 0;
-    var totalImages = images.length;
-
-    function onImageLoad() {
-        loadedCount++;
-        if (loadedCount === totalImages) {
+    // Show gallery and re-layout as images load
+    var revealed = false;
+    function revealGallery() {
+        if (!revealed) {
+            revealed = true;
             portfolioIsotope.layout();
             container.style.opacity = "1";
         }
     }
 
-    images.forEach(function (img) {
-        if (img.complete) {
-            onImageLoad();
-        } else {
-            img.addEventListener("load", onImageLoad);
-            img.addEventListener("error", onImageLoad);
-        }
-    });
+    // Reveal after a short delay (thumbs are small, first visible ones load fast)
+    setTimeout(revealGallery, 500);
+
+    // Also re-layout whenever any image loads (handles lazy-loaded ones)
+    container.addEventListener("load", function () {
+        portfolioIsotope.layout();
+    }, true);
 
     // Filter click handlers
     filtersContainer.querySelectorAll("li").forEach(function (btn) {
