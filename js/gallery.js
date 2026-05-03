@@ -34,6 +34,10 @@ document.addEventListener("DOMContentLoaded", function () {
         filtersContainer.appendChild(btn);
     });
 
+    // Hide container until images are loaded to prevent overlap
+    container.style.opacity = "0";
+    container.style.transition = "opacity 0.3s ease";
+
     // Build gallery items
     Object.keys(galleryCategories).forEach(function (key) {
         if (!galleryData[key]) return;
@@ -67,6 +71,7 @@ document.addEventListener("DOMContentLoaded", function () {
         loadedCount++;
         if (loadedCount === totalImages) {
             portfolioIsotope.layout();
+            container.style.opacity = "1";
         }
     }
 
