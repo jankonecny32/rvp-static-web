@@ -37,7 +37,7 @@
         }
     });
     $('.back-to-top').click(function () {
-        $('html, body').animate({scrollTop: 0}, 1500, 'easeInOutExpo');
+        window.scrollTo({ top: 0 });
         return false;
     });
 
