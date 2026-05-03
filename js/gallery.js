@@ -42,13 +42,14 @@ document.addEventListener("DOMContentLoaded", function () {
     Object.keys(galleryCategories).forEach(function (key) {
         if (!galleryData[key]) return;
         galleryData[key].forEach(function (img) {
-            var imgPath = "img/rvp/" + key + "/" + img;
+            var fullPath = "img/rvp/" + key + "/" + img;
+            var thumbPath = "img/rvp/" + key + "/thumbs/" + img;
             var col = document.createElement("div");
             col.className = "col-xl-4 col-lg-6 col-md-6 portfolio-item " + key;
             col.innerHTML =
                 '<div class="position-relative portfolio-box">' +
-                    '<img class="img-fluid w-100" src="' + imgPath + '" alt="' + galleryCategories[key] + '">' +
-                    '<a class="portfolio-btn" href="' + imgPath + '" data-lightbox="portfolio">' +
+                    '<img class="img-fluid w-100" loading="lazy" src="' + thumbPath + '" alt="' + galleryCategories[key] + '">' +
+                    '<a class="portfolio-btn" href="' + fullPath + '" data-lightbox="portfolio">' +
                         '<i class="bi bi-plus text-white"></i>' +
                     '</a>' +
                 '</div>';
