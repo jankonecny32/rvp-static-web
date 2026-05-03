@@ -40,6 +40,15 @@
             opacity: 1;
             transform: translateY(0);
         }
+        @media (min-width: 768px) {
+            .two-col-list {
+                columns: 2;
+                column-gap: 2rem;
+            }
+            .two-col-list > li {
+                break-inside: avoid;
+            }
+        }
     </style>
 </head>
 
@@ -121,7 +130,7 @@
                         <i class="fa fa-3x fa-hammer text-primary"></i>
                     </div>
                     <h4 class="text-uppercase mb-3">Tesařské práce</h4>
-                    <ul class="list-unstyled text-start w-100 px-3">
+                    <ul class="list-unstyled text-start w-100 px-3 two-col-list">
                         <li class="mb-2"><i class="fa fa-check text-primary me-2"></i>Krovy</li>
                         <li class="mb-2"><i class="fa fa-check text-primary me-2"></i>Dřevostavby (hrubá stavba)</li>
                         <li class="mb-2"><i class="fa fa-check text-primary me-2"></i>Přístavby ze dřeva
@@ -153,7 +162,7 @@
                         <i class="fa fa-3x fa-hard-hat text-primary"></i>
                     </div>
                     <h4 class="text-uppercase mb-3">Stavební práce</h4>
-                    <ul class="list-unstyled text-start w-100 px-3">
+                    <ul class="list-unstyled text-start w-100 px-3 two-col-list">
                         <li class="mb-2"><i class="fa fa-check text-primary me-2"></i>Rekonstrukce</li>
                         <li class="mb-2"><i class="fa fa-check text-primary me-2"></i>Přístavby
                             <ul class="list-unstyled ms-4 mt-1">
