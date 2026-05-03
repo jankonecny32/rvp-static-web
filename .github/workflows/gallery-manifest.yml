@@ -1,0 +1,26 @@
+name: Generate Gallery Manifest
+
+on:
+  push:
+    paths:
+      - 'img/rvp/**'
+
+jobs:
+  generate-manifest:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Generate gallery manifest
+        shell: pwsh
+        run: ./scripts/generate-gallery-manifest.ps1
+
+      - name: Commit manifest if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add js/gallery-data.js
+          git diff --cached --quiet || git commit -m "chore: update gallery manifest"
+          git push
