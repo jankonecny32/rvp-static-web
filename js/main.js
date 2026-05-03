@@ -64,3 +64,22 @@
     
 })(jQuery);
 
+// Scroll reveal animations
+(function () {
+    var revealElements = document.querySelectorAll('.reveal');
+    if (!revealElements.length) return;
+
+    var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.15 });
+
+    revealElements.forEach(function (el) {
+        observer.observe(el);
+    });
+})();
+
