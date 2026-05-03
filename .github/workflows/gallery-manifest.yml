@@ -13,6 +13,10 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Generate thumbnails
+        shell: pwsh
+        run: ./scripts/generate-thumbnails.ps1
+
       - name: Generate gallery manifest
         shell: pwsh
         run: ./scripts/generate-gallery-manifest.ps1
@@ -21,6 +25,6 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add js/gallery-data.js
-          git diff --cached --quiet || git commit -m "chore: update gallery manifest"
+          git add js/gallery-data.js img/rvp/*/thumbs/
+          git diff --cached --quiet || git commit -m "chore: update gallery manifest and thumbnails"
           git push
