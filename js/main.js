@@ -1,6 +1,14 @@
 (function ($) {
     "use strict";
     
+    // Close mobile menu on nav link click
+    $('.navbar-nav .nav-link').on('click', function () {
+        var navbarCollapse = $('#navbarCollapse');
+        if (navbarCollapse.hasClass('show')) {
+            navbarCollapse.collapse('hide');
+        }
+    });
+
     // Dropdown on mouse hover
     $(document).ready(function () {
         function toggleNavbarMethod() {
