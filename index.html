@@ -29,7 +29,18 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
-    <style>html { scroll-behavior: smooth; scroll-padding-top: 80px; }</style>
+    <style>
+        html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
 </head>
 
 <body>
@@ -99,7 +110,7 @@
     <!-- Carousel End -->
 
     <!-- Services Start -->
-    <div id="sluzby" class="container-fluid bg-light py-6 px-5">
+    <div id="sluzby" class="container-fluid bg-light py-6 px-5 reveal">
         <div class="text-center mx-auto mb-5" style="max-width: 600px;">
             <h1 class="display-5 text-uppercase mb-4">Naše <span class="text-primary">služby</span></h1>
         </div>
@@ -194,7 +205,7 @@
 
 
     <!-- History Start -->
-    <div id="historie" class="container-fluid py-6 px-5">
+    <div id="historie" class="container-fluid py-6 px-5 reveal">
         <div class="row g-5 align-items-center">
             <div class="col-lg-8 mx-auto">
                 <div class="text-center mb-4">
@@ -215,7 +226,7 @@
     <!-- History End -->
 
     <!-- Portfolio Start -->
-    <div id="realizace" class="container-fluid bg-light py-6 px-5">
+    <div id="realizace" class="container-fluid bg-light py-6 px-5 reveal">
         <div class="text-center mx-auto mb-5" style="max-width: 600px;">
             <h1 class="display-5 text-uppercase mb-4">Naše <span class="text-primary">realizace</span></h1>
         </div>
@@ -233,7 +244,7 @@
     <!-- Portfolio End -->
 
     <!-- Contact Start -->
-    <div id="kontakt" class="container-fluid py-6 px-5">
+    <div id="kontakt" class="container-fluid py-6 px-5 reveal">
         <div class="text-center mx-auto mb-5" style="max-width: 600px;">
             <h1 class="display-5 text-uppercase mb-4"><span class="text-primary">Kontakt</span></h1>
         </div>
