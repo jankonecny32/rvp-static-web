@@ -15,19 +15,18 @@ jobs:
 
       - name: Generate thumbnails
         run: |
-          for dir in img/rvp/tesarske-prace img/rvp/stavebni-prace img/rvp/fasadni-panely img/rvp/pro-vase-projekty; do
-            if [ -d "$dir" ]; then
-              mkdir -p "$dir/thumbs"
-              for img in "$dir"/*.{jpg,jpeg,png,gif,webp,avif}; do
-                [ -f "$img" ] || continue
-                thumb="$dir/thumbs/$(basename "$img")"
-                if [ ! -f "$thumb" ] || [ "$img" -nt "$thumb" ]; then
-                  convert "$img" -resize "800x>" -quality 80 "$thumb"
-                  echo "  $(basename "$img"): $(du -k "$img" | cut -f1)KB -> $(du -k "$thumb" | cut -f1)KB"
-                fi
-              done
-            fi
-          done
+          dir="img/rvp/galerie"
+          if [ -d "$dir" ]; then
+            mkdir -p "$dir/thumbs"
+            for img in "$dir"/*.{jpg,jpeg,png,gif,webp,avif}; do
+              [ -f "$img" ] || continue
+              thumb="$dir/thumbs/$(basename "$img")"
+              if [ ! -f "$thumb" ] || [ "$img" -nt "$thumb" ]; then
+                convert "$img" -resize "800x>" -quality 80 "$thumb"
+                echo "  $(basename "$img"): $(du -k "$img" | cut -f1)KB -> $(du -k "$thumb" | cut -f1)KB"
+              fi
+            done
+          fi
 
       - name: Generate gallery manifest
         shell: pwsh
@@ -37,6 +36,6 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add js/gallery-data.js img/rvp/*/thumbs/
+          git add js/gallery-data.js img/rvp/galerie/thumbs/
           git diff --cached --quiet || git commit -m "chore: update gallery manifest and thumbnails"
           git push
