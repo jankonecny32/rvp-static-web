@@ -13,6 +13,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Install ImageMagick
+        run: sudo apt-get update && sudo apt-get install -y imagemagick
+
       - name: Generate thumbnails
         run: |
           dir="img/rvp/galerie"
@@ -22,7 +25,7 @@ jobs:
               [ -f "$img" ] || continue
               thumb="$dir/thumbs/$(basename "$img")"
               if [ ! -f "$thumb" ] || [ "$img" -nt "$thumb" ]; then
-                convert "$img" -resize "800x>" -quality 80 "$thumb"
+                convert "$img" -auto-orient -resize "800x>" -quality 80 "$thumb"
                 echo "  $(basename "$img"): $(du -k "$img" | cut -f1)KB -> $(du -k "$thumb" | cut -f1)KB"
               fi
             done
