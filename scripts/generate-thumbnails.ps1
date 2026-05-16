@@ -40,7 +40,25 @@ foreach ($file in $files) {
 
     try {
         $img = [System.Drawing.Image]::FromFile($file.FullName)
-        
+
+        # Apply EXIF orientation so thumbnails are not rotated
+        try {
+            $orientationId = 0x0112
+            if ($img.PropertyIdList -contains $orientationId) {
+                $orientation = $img.GetPropertyItem($orientationId).Value[0]
+                switch ($orientation) {
+                    2 { $img.RotateFlip([System.Drawing.RotateFlipType]::RotateNoneFlipX) }
+                    3 { $img.RotateFlip([System.Drawing.RotateFlipType]::Rotate180FlipNone) }
+                    4 { $img.RotateFlip([System.Drawing.RotateFlipType]::RotateNoneFlipY) }
+                    5 { $img.RotateFlip([System.Drawing.RotateFlipType]::Rotate270FlipX) }
+                    6 { $img.RotateFlip([System.Drawing.RotateFlipType]::Rotate90FlipNone) }
+                    7 { $img.RotateFlip([System.Drawing.RotateFlipType]::Rotate90FlipX) }
+                    8 { $img.RotateFlip([System.Drawing.RotateFlipType]::Rotate270FlipNone) }
+                }
+                $img.RemovePropertyItem($orientationId)
+            }
+        } catch { }
+
         if ($img.Width -le $maxWidth) {
             $newWidth = $img.Width
             $newHeight = $img.Height
