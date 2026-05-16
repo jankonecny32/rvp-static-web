@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>VRP.cz</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Free HTML Templates" name="keywords">
+    <meta content="Free HTML Templates" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Roboto:wght@500;700&display=swap" rel="stylesheet"> 
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+    <style>
+        html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        /* Constrain content width on large screens */
+        .content-wrap {
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar Start -->
+    <div class="container-fluid sticky-top bg-dark bg-light-radial shadow-sm">
+        <nav class="navbar navbar-expand-lg bg-dark bg-light-radial navbar-dark py-3 py-lg-0 content-wrap px-3">
+            <a href="index.html" class="navbar-brand">
+                <h1 class="m-0 display-4 text-uppercase text-white"><i class="bi bi-building text-primary me-2"></i>VRP.cz</h1>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav ms-auto py-0">
+                    <a href="#sluzby" class="nav-item nav-link">Služby</a>
+                    <a href="#historie" class="nav-item nav-link">O nás</a>
+                    <a href="#realizace" class="nav-item nav-link">Realizace</a>
+                    <a href="#kontakt" class="nav-item nav-link bg-primary text-white px-lg-5 ms-lg-3">Kontakt</a>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <!-- Navbar End -->
+
+
+    <!-- Carousel Start -->
+    <div class="container-fluid p-0">
+        <div id="header-carousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img class="w-100" src="img/rvp/uvod/drevostavba_vyhled.jpg" alt="VRP">
+                </div>
+                <div class="carousel-item">
+                    <img class="w-100" src="img/rvp/uvod/dum_venku_vyhled.jpg" alt="VRP">
+                </div>
+                <div class="carousel-item">
+                    <img class="w-100" src="img/rvp/uvod/pristresek_vyhled.jpg" alt="VRP">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#header-carousel"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#header-carousel"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+    <!-- Carousel End -->
+
+    <!-- Services Start -->
+    <div id="sluzby" class="container-fluid bg-light py-6 reveal">
+        <div class="content-wrap px-3">
+        <div class="text-center mx-auto mb-5" style="max-width: 600px;">
+            <h1 class="display-5 text-uppercase mb-4">Naše <span class="text-primary">služby</span></h1>
+        </div>
+        <div class="row g-5">
+            <div class="col-lg-6 col-md-6 reveal">
+                <div class="service-item bg-white rounded d-flex flex-column align-items-center text-center p-4 h-100">
+                    <div class="service-icon bg-white mb-3">
+                        <i class="fa fa-3x fa-hammer text-primary"></i>
+                    </div>
+                    <h4 class="text-uppercase mb-3">Tesařské práce</h4>
+                    <ul class="list-unstyled text-start w-100 px-3">
+                        <li class="mb-2"><i class="fa fa-check text-primary me-2"></i>Krovy</li>
+                        <li class="mb-2"><i class="fa fa-check text-primary me-2"></i>Dřevostavby (hrubá stavba)</li>
+                        <li class="mb-2"><i class="fa fa-check text-primary me-2"></i>Přístavby ze dřeva
+                            <ul class="list-unstyled ms-4 mt-1">
+                                <li class="mb-1"><i class="fa fa-angle-right text-primary me-2"></i>základy</li>
+                                <li class="mb-1"><i class="fa fa-angle-right text-primary me-2"></i>ležatá kanalizace</li>
+                                <li class="mb-1"><i class="fa fa-angle-right text-primary me-2"></i>rozvod vody</li>
+                                <li class="mb-1"><i class="fa fa-angle-right text-primary me-2"></i>krovy</li>
+                                <li class="mb-1"><i class="fa fa-angle-right text-primary me-2"></i>krytina</li>
+                            </ul>
+                        </li>
+                        <li class="mb-2"><i class="fa fa-check text-primary me-2"></i>Pergoly</li>
+                        <li class="mb-2"><i class="fa fa-check text-primary me-2"></i>Altány
+                            <ul class="list-unstyled ms-4 mt-1">
+                                <li class="mb-1"><i class="fa fa-angle-right text-primary me-2"></i>základy</li>
+                                <li class="mb-1"><i class="fa fa-angle-right text-primary me-2"></i>krytina</li>
+                                <li class="mb-1"><i class="fa fa-angle-right text-primary me-2"></i>dlažba</li>
+                            </ul>
+                        </li>
+                        <li class="mb-2"><i class="fa fa-check text-primary me-2"></i>Garáže</li>
+                        <li class="mb-2"><i class="fa fa-check text-primary me-2"></i>Dřevěné bednění na betonáž</li>
+                        <li class="mb-2"><i class="fa fa-check text-primary me-2"></i>Dřevěné obklady</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 reveal">
+                <div class="service-item bg-white rounded d-flex flex-column align-items-center text-center p-4 h-100">
+                    <div class="service-icon bg-white mb-3">
+                        <i class="fa fa-3x fa-hard-hat text-primary"></i>
+                    </div>
+                    <h4 class="text-uppercase mb-3">Stavební práce</h4>
+                    <ul class="list-unstyled text-start w-100 px-3">
+                        <li class="mb-2"><i class="fa fa-check text-primary me-2"></i>Rekonstrukce</li>
+                        <li class="mb-2"><i class="fa fa-check text-primary me-2"></i>Přístavby
+                            <ul class="list-unstyled ms-4 mt-1">
+                                <li class="mb-1"><i class="fa fa-angle-right text-primary me-2"></i>základy</li>
+                                <li class="mb-1"><i class="fa fa-angle-right text-primary me-2"></i>ležatá kanalizace</li>
+                                <li class="mb-1"><i class="fa fa-angle-right text-primary me-2"></i>rozvody vody</li>
+                                <li class="mb-1"><i class="fa fa-angle-right text-primary me-2"></i>krovy</li>
+                                <li class="mb-1"><i class="fa fa-angle-right text-primary me-2"></i>krytina</li>
+                            </ul>
+                        </li>
+                        <li class="mb-2"><i class="fa fa-check text-primary me-2"></i>Nádstavby
+                            <ul class="list-unstyled ms-4 mt-1">
+                                <li class="mb-1"><i class="fa fa-angle-right text-primary me-2"></i>krovy</li>
+                                <li class="mb-1"><i class="fa fa-angle-right text-primary me-2"></i>krytina</li>
+                            </ul>
+                        </li>
+                        <li class="mb-2"><i class="fa fa-check text-primary me-2"></i>Půdní vestavby</li>
+                        <li class="mb-2"><i class="fa fa-check text-primary me-2"></i>Drobně stavební práce</li>
+                        <li class="mb-2"><i class="fa fa-check text-primary me-2"></i>Montáž sádrokartonu</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 reveal">
+                <div class="service-item bg-white rounded d-flex flex-column align-items-center text-center p-4 h-100">
+                    <div class="service-icon bg-white mb-3">
+                        <i class="fa fa-3x fa-th-large text-primary"></i>
+                    </div>
+                    <h4 class="text-uppercase mb-3">Fasádní panely</h4>
+                    <ul class="list-unstyled text-start w-100 px-3">
+                        <li class="mb-2"><i class="fa fa-check text-primary me-2"></i>Montáž fasádních panelů</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 reveal">
+                <div class="service-item bg-white rounded d-flex flex-column align-items-center text-center p-4 h-100">
+                    <div class="service-icon bg-white mb-3">
+                        <i class="fa fa-3x fa-cogs text-primary"></i>
+                    </div>
+                    <h4 class="text-uppercase mb-3">Pro Vaše projekty</h4>
+                    <ul class="list-unstyled text-start w-100 px-3">
+                        <li class="mb-2"><i class="fa fa-check text-primary me-2"></i>Vyřezávání hlavic trámů tesařskou pásovou pilou</li>
+                        <li class="mb-2"><i class="fa fa-check text-primary me-2"></i>Ruční hoblování trámu do šíře 300 mm</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+    <!-- Services End -->
+
+
+    <!-- History Start -->
+    <div id="historie" class="container-fluid py-6 reveal">
+        <div class="content-wrap px-3">
+        <div class="row g-5 align-items-center">
+            <div class="col-lg-8 mx-auto">
+                <div class="text-center mb-4">
+                    <h1 class="display-5 text-uppercase mb-4">Naše <span class="text-primary">historie</span></h1>
+                </div>
+                <p class="fs-5 text-body">
+                    Historicky původní záměr byl věnovat se čistě a jen tesařině. A šlo to velmi dobře. Třísky a hobliny lítaly vzduchem a krovy a konstrukce se vesele montovaly. To ale bylo v dobách, kdy řemeslníků bylo jako máku. Pak nastaly horší časy. Zručných pracantů začalo překotně ubývat. Najednou bylo spousty práce rozdělané a nic pořádně dodělané. Najednou neměl kdo obezdít krokve, dozdít štíty nebo udělat základ pod dřevěnou přístavbu.
+                </p>
+                <p class="fs-5 text-body">
+                    Nezbylo než se přizpůsobit situaci a tyto věci si začít dělat samostatně a rozšířit se i o práce zednické. A byl to krok dobrým směrem a práce zase začala být dodělaná. Následný čas ukázal, že rozhodně nebylo naposled co bylo třeba se naučit nové věci, aby celkově provedené práce byly s minimální účastí dalších subdodavatelů a zbytečně se neprodlužoval čas potřebný na dokončení díla.
+                </p>
+                <p class="fs-5 text-body">
+                    Tak se to po letech pracovního vývoje snad podařilo… Ale to už nejsme schopni posoudit sami.
+                </p>
+            </div>
+        </div>
+        </div>
+    </div>
+    <!-- History End -->
+
+    <!-- Portfolio Start -->
+    <div id="realizace" class="container-fluid bg-light py-6 reveal visible">
+        <div class="content-wrap px-3">
+        <div class="text-center mx-auto mb-5" style="max-width: 600px;">
+            <h1 class="display-5 text-uppercase mb-4">Naše <span class="text-primary">realizace</span></h1>
+        </div>
+        <div class="row g-5 portfolio-container" id="rvp-gallery-container">
+        </div>
+        </div>
+    </div>
+    <!-- Portfolio End -->
+
+    <!-- Contact Start -->
+    <div id="kontakt" class="container-fluid py-6 reveal">
+        <div class="content-wrap px-3">
+        <div class="text-center mx-auto mb-5" style="max-width: 600px;">
+            <h1 class="display-5 text-uppercase mb-4"><span class="text-primary">Kontakt</span></h1>
+        </div>
+        <div class="row gx-0 align-items-center">
+            <div class="col-lg-6 mb-5 mb-lg-0" style="height: 450px;">
+                <iframe class="w-100 h-100"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2606.0!2d18.298755!3d49.5405582!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47138ad0a411b4d1%3A0x9f43c28a21f95ba8!2sKun%C4%8Dice%20pod%20Ond%C5%99ejn%C3%ADkem%20201!5e0!3m2!1scs!2scz!4v1700000000000!5m2!1scs!2scz"
+                    frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+            </div>
+            <div class="col-lg-6">
+                <div class="bg-light p-5">
+                    <div class="mb-4">
+                        <div class="d-flex align-items-center mb-3">
+                            <i class="fa fa-map-marker-alt fa-2x text-primary me-3"></i>
+                            <div>
+                                <h5 class="text-uppercase mb-1">Adresa</h5>
+                                <p class="mb-0">Kunčice pod Ondřejníkem 201</p>
+                            </div>
+                        </div>
+                    </div>
+                    <h5 class="text-uppercase mb-3">Vítězslav Polách</h5>
+                    <div class="mb-3">
+                        <div class="d-flex align-items-center mb-2">
+                            <i class="fa fa-phone-alt fa-2x text-primary me-3"></i>
+                            <div>
+                                <h5 class="text-uppercase mb-1">Telefon</h5>
+                                <p class="mb-0"><a href="tel:+420605181804">+420 605 181 804</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <div class="d-flex align-items-center mb-2">
+                            <i class="fa fa-envelope fa-2x text-primary me-3"></i>
+                            <div>
+                                <h5 class="text-uppercase mb-1">Email</h5>
+                                <p class="mb-0"><a href="mailto:vita.polach@seznam.cz">vita.polach@seznam.cz</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <h5 class="text-uppercase mb-3">Robert Polách</h5>
+                    <div class="mb-3">
+                        <div class="d-flex align-items-center mb-2">
+                            <i class="fa fa-phone-alt fa-2x text-primary me-3"></i>
+                            <div>
+                                <h5 class="text-uppercase mb-1">Telefon</h5>
+                                <p class="mb-0"><a href="tel:+420736157599">+420 736 157 599</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <div class="d-flex align-items-center mb-2">
+                            <i class="fa fa-envelope fa-2x text-primary me-3"></i>
+                            <div>
+                                <h5 class="text-uppercase mb-1">Email</h5>
+                                <p class="mb-0"><a href="mailto:robert.chalop@gmail.com">robert.chalop@gmail.com</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+    <!-- Contact End -->
+
+    <!-- Footer Start -->
+    <div class="container-fluid bg-dark bg-light-radial text-white border-top border-primary px-0">
+        <div class="content-wrap d-flex flex-column flex-md-row justify-content-between">
+            <div class="py-4 px-5 text-center text-md-start">
+                <p class="mb-0">&copy; <a class="text-primary" href="#">VRP.cz</a></p>
+            </div>
+            <div class="py-4 px-5 bg-primary footer-shape position-relative text-center text-md-end">
+                <p class="mb-0">Designed by <a class="text-dark" href="https://htmlcodex.com">HTML Codex</a></p>
+                <p class="mb-0">Distributed by <a class="text-dark" href="https://themewagon.com">ThemeWagon</a></p>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/tempusdominus/js/moment.min.js"></script>
+    <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
+    <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+    <script src="lib/isotope/isotope.pkgd.min.js"></script>
+    <script src="lib/lightbox/js/lightbox.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/gallery-data.js"></script>
+    <script src="js/gallery.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
