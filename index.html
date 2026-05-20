@@ -40,13 +40,19 @@
             opacity: 1;
             transform: translateY(0);
         }
+        /* Constrain content width on large screens */
+        .content-wrap {
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
     </style>
 </head>
 
 <body>
     <!-- Navbar Start -->
-    <div class="container-fluid sticky-top bg-dark bg-light-radial shadow-sm px-5 pe-lg-0">
-        <nav class="navbar navbar-expand-lg bg-dark bg-light-radial navbar-dark py-3 py-lg-0">
+    <div class="container-fluid sticky-top bg-dark bg-light-radial shadow-sm">
+        <nav class="navbar navbar-expand-lg bg-dark bg-light-radial navbar-dark py-3 py-lg-0 content-wrap px-3">
             <a href="index.html" class="navbar-brand">
                 <h1 class="m-0 display-4 text-uppercase text-white"><i class="bi bi-building text-primary me-2"></i>VRP.cz</h1>
             </a>
@@ -95,7 +101,8 @@
     <!-- Carousel End -->
 
     <!-- Services Start -->
-    <div id="sluzby" class="container-fluid bg-light py-6 px-5 reveal">
+    <div id="sluzby" class="container-fluid bg-light py-6 reveal">
+        <div class="content-wrap px-3">
         <div class="text-center mx-auto mb-5" style="max-width: 600px;">
             <h1 class="display-5 text-uppercase mb-4">Naše <span class="text-primary">služby</span></h1>
         </div>
@@ -185,12 +192,14 @@
                 </div>
             </div>
         </div>
+        </div>
     </div>
     <!-- Services End -->
 
 
     <!-- History Start -->
-    <div id="historie" class="container-fluid py-6 px-5 reveal">
+    <div id="historie" class="container-fluid py-6 reveal">
+        <div class="content-wrap px-3">
         <div class="row g-5 align-items-center">
             <div class="col-lg-8 mx-auto">
                 <div class="text-center mb-4">
@@ -207,21 +216,30 @@
                 </p>
             </div>
         </div>
+        </div>
     </div>
     <!-- History End -->
 
     <!-- Portfolio Start -->
-    <div id="realizace" class="container-fluid bg-light py-6 px-5 reveal visible">
+    <div id="realizace" class="container-fluid bg-light py-6 reveal">
+        <div class="content-wrap px-3">
         <div class="text-center mx-auto mb-5" style="max-width: 600px;">
             <h1 class="display-5 text-uppercase mb-4">Naše <span class="text-primary">realizace</span></h1>
         </div>
-        <div class="row g-5 portfolio-container" id="rvp-gallery-container">
+        <div class="row g-5" id="rvp-gallery-container">
+        </div>
+        <div class="text-center mt-4" id="gallery-toggle-wrap" style="display: none;">
+            <button id="gallery-toggle-btn" class="btn btn-primary text-white py-3 px-5">
+                <i class="bi bi-images me-2"></i>Zobrazit vše
+            </button>
+        </div>
         </div>
     </div>
     <!-- Portfolio End -->
 
     <!-- Contact Start -->
-    <div id="kontakt" class="container-fluid py-6 px-5 reveal">
+    <div id="kontakt" class="container-fluid py-6 reveal">
+        <div class="content-wrap px-3">
         <div class="text-center mx-auto mb-5" style="max-width: 600px;">
             <h1 class="display-5 text-uppercase mb-4"><span class="text-primary">Kontakt</span></h1>
         </div>
@@ -283,12 +301,13 @@
                 </div>
             </div>
         </div>
+        </div>
     </div>
     <!-- Contact End -->
 
     <!-- Footer Start -->
     <div class="container-fluid bg-dark bg-light-radial text-white border-top border-primary px-0">
-        <div class="d-flex flex-column flex-md-row justify-content-between">
+        <div class="content-wrap d-flex flex-column flex-md-row justify-content-between">
             <div class="py-4 px-5 text-center text-md-start">
                 <p class="mb-0">&copy; <a class="text-primary" href="#">VRP.cz</a></p>
             </div>
@@ -314,12 +333,72 @@
     <script src="lib/tempusdominus/js/moment.min.js"></script>
     <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
     <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
-    <script src="lib/isotope/isotope.pkgd.min.js"></script>
     <script src="lib/lightbox/js/lightbox.min.js"></script>
 
     <!-- Template Javascript -->
     <script src="js/gallery-data.js"></script>
-    <script src="js/gallery.js"></script>
+    <script>
+    // Collapsible gallery: shows first 6 photos, expands on click
+    document.addEventListener("DOMContentLoaded", function () {
+        var container = document.getElementById("rvp-gallery-container");
+        var toggleWrap = document.getElementById("gallery-toggle-wrap");
+        var toggleBtn = document.getElementById("gallery-toggle-btn");
+        if (!container || typeof galleryManifest === "undefined") return;
+
+        var PREVIEW_COUNT = 6;
+        var expanded = false;
+
+        galleryManifest.forEach(function (img, i) {
+            var fullPath = "img/rvp/galerie/" + img;
+            var thumbPath = "img/rvp/galerie/thumbs/" + img;
+            var col = document.createElement("div");
+            col.className = "col-xl-4 col-lg-6 col-md-6 portfolio-item";
+            col.innerHTML =
+                '<div class="position-relative portfolio-box">' +
+                    '<img class="img-fluid w-100" loading="lazy" src="' + thumbPath + '" alt="RVP realizace">' +
+                    '<a class="portfolio-btn" href="' + fullPath + '" data-lightbox="portfolio">' +
+                        '<i class="bi bi-plus text-white"></i>' +
+                    '</a>' +
+                '</div>';
+            if (i >= PREVIEW_COUNT) {
+                col.style.display = "none";
+                col.classList.add("gallery-extra");
+            }
+            container.appendChild(col);
+        });
+
+        if (galleryManifest.length > PREVIEW_COUNT) {
+            toggleWrap.style.display = "";
+        }
+
+        toggleBtn.addEventListener("click", function () {
+            expanded = !expanded;
+            var extras = container.querySelectorAll(".gallery-extra");
+            extras.forEach(function (el) {
+                if (expanded) {
+                    el.style.display = "";
+                    el.style.opacity = "0";
+                    el.style.transform = "translateY(30px)";
+                    el.style.transition = "opacity 0.5s ease, transform 0.5s ease";
+                    requestAnimationFrame(function () {
+                        requestAnimationFrame(function () {
+                            el.style.opacity = "1";
+                            el.style.transform = "translateY(0)";
+                        });
+                    });
+                } else {
+                    el.style.display = "none";
+                }
+            });
+            if (expanded) {
+                toggleBtn.innerHTML = '<i class="bi bi-chevron-up me-2"></i>Skrýt';
+            } else {
+                toggleBtn.innerHTML = '<i class="bi bi-images me-2"></i>Zobrazit vše';
+                document.getElementById("realizace").scrollIntoView({ behavior: "smooth" });
+            }
+        });
+    });
+    </script>
     <script src="js/main.js"></script>
 </body>
 
