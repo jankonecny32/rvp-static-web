@@ -8,7 +8,7 @@
 
 /* Carousel – fixed aspect ratio to prevent layout shift and crop to show construction */
 #header-carousel .carousel-inner {
-    aspect-ratio: 21 / 9;
+    aspect-ratio: 21 / 10;
     overflow: hidden;
 }
 
