@@ -24,7 +24,7 @@
 }
 
 #header-carousel .carousel-item:nth-child(2) img {
-    object-position: center 5%;
+    object-position: center 0%;
 }
 
 #header-carousel .carousel-item:nth-child(3) img {
