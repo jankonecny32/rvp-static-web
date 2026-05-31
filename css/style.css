@@ -23,6 +23,14 @@
     object-position: center 60%;
 }
 
+#header-carousel .carousel-item:nth-child(2) img {
+    object-position: center 30%;
+}
+
+#header-carousel .carousel-item:nth-child(3) img {
+    object-position: center 80%;
+}
+
 .pt-6 {
     padding-top: 90px;
 }
